@@ -35,15 +35,7 @@ public class Main {
                     System.out.println("Producto añadido correctamente");
                 }
                 case 2 -> {
-                    System.out.print("Índice del producto a borrar: ");
-                    indice = scanner.nextInt();
-                    scanner.nextLine();
-                    if (indice < 0 || indice >= productos.size()) {
-                        System.out.println("Índice no válido");
-                    } else {
-                        productos.remove(indice);
-                        System.out.println("Producto borrado correctamente");
-                    }
+                    borrarProductos();
                 }
                 case 3 -> {
                     System.out.print("Índice del producto a modificar: ");
@@ -69,7 +61,13 @@ public class Main {
                     }
                 }
                 case 4 -> {
-                    metodocaso4();
+                    System.out.println("=== Listado de productos ===");
+                    for (int index = 0; index < productos.size(); index++) {
+                        Producto productoAMostrar = productos.get(i);
+                        System.out.println(index + ". " + productoAMostrar.getNombre() + " - $" + productoAMostrar.getPrecio());
+                    }
+
+                    System.out.println("============================");
                 }
                 case 5 -> System.out.println("¡Hasta luego!");
                 default -> System.out.println("Opción no válida");
@@ -78,14 +76,29 @@ public class Main {
     }
 
 
+
     private static void metodocaso4() {
         System.out.println("=== Listado de productos ===");
         for (int index = 0; index < productos.size(); index++) {
             Producto productoAMostrar = productos.get(i);
             System.out.println(index + ". " + productoAMostrar.getNombre() + " - $" + productoAMostrar.getPrecio());
-        }
 
-        System.out.println("============================");
+    /**
+     *<h2>Caso 2 Borrar Productos</h2>
+     *<p>Indicamos el <b>índice</b> y el programa nos devuelve si es válido o si se ha borrado dicho producto</p>
+     */
+    private static void borrarProductos() {
+        int indice;
+        System.out.print("Índice del producto a borrar: ");
+        indice = scanner.nextInt();
+        scanner.nextLine();
+        if (indice < 0 || indice >= productos.size()) {
+            System.out.println("Índice no válido");
+        } else {
+            productos.remove(indice);
+            System.out.println("Producto borrado correctamente");
+>>>>>>> origin/development
+        }
     }
 
     static class Producto {
