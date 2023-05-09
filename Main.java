@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/*
+ * @author Jesús, Luis, Alfonso, Juana
+ * @version 1.0
+ * */
 public class Main {
 
     static Scanner scanner = new Scanner(System.in);
@@ -72,6 +76,7 @@ public class Main {
             }
         } while (opcion != 5);
     }
+
 
     private static void metodocaso4() {
         System.out.println("=== Listado de productos ===");
