@@ -5,7 +5,7 @@ public class Main {
 
     static Scanner scanner = new Scanner(System.in);
     static ArrayList<Producto> productos = new ArrayList<>();
-
+   //HOLA SOY JUANA
     public static void main(String[] args) {
         int opcion;
         int indice;
