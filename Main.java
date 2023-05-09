@@ -34,27 +34,7 @@ public class Main {
                     borrarProductos();
                 }
                 case 3 -> {
-                    System.out.print("Índice del producto a modificar: ");
-                    indice = scanner.nextInt();
-                    scanner.nextLine();
-                    if (indice < 0 || indice >= productos.size()) {
-                        System.out.println("Índice no válido");
-                    } else {
-                        System.out.print("Nuevo nombre del producto (deja vacío para no modificar): ");
-                        String nuevoNombre = scanner.nextLine();
-                        System.out.print("Nuevo precio del producto (deja 0 para no modificar): ");
-                        double nuevoPrecio = scanner.nextDouble();
-                        scanner.nextLine();
-                        Producto productoAModificar = productos.get(indice);
-                        if (!nuevoNombre.isEmpty()) {
-                            productoAModificar.setNombre(nuevoNombre);
-                        }
-                        if (nuevoPrecio != 0) {
-                            productoAModificar.setPrecio(nuevoPrecio);
-                        }
-
-                        System.out.println("Producto modificado correctamente");
-                    }
+                    modificarProductos();
                 }
                 case 4 -> {
                     System.out.println("=== Listado de productos ===");
@@ -69,6 +49,35 @@ public class Main {
                 default -> System.out.println("Opción no válida");
             }
         } while (opcion != 5);
+    }
+
+    /**
+     * <h2>Caso 3 Modificar Productos</h2>
+     * <p>Indicamos el indice del producto que queremos modificar</p>
+     */
+    private static void modificarProductos() {
+        int indice;
+        System.out.print("Índice del producto a modificar: ");
+        indice = scanner.nextInt();
+        scanner.nextLine();
+        if (indice < 0 || indice >= productos.size()) {
+            System.out.println("Índice no válido");
+        } else {
+            System.out.print("Nuevo nombre del producto (deja vacío para no modificar): ");
+            String nuevoNombre = scanner.nextLine();
+            System.out.print("Nuevo precio del producto (deja 0 para no modificar): ");
+            double nuevoPrecio = scanner.nextDouble();
+            scanner.nextLine();
+            Producto productoAModificar = productos.get(indice);
+            if (!nuevoNombre.isEmpty()) {
+                productoAModificar.setNombre(nuevoNombre);
+            }
+            if (nuevoPrecio != 0) {
+                productoAModificar.setPrecio(nuevoPrecio);
+            }
+
+            System.out.println("Producto modificado correctamente");
+        }
     }
 
     /**
