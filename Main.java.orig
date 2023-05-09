@@ -21,11 +21,14 @@ public class Main {
             scanner.nextLine();
             switch (opcion) {
                 case 1 -> {
-                    /**
-                     * <h2>Implementación Método añadirProducto</h2>
-                     * <p>Se ha insertado un método reemplazando el código</p>
-                     */
-                    añadirProducto();
+                    System.out.print("Nombre del producto: ");
+                    String nombre = scanner.nextLine();
+                    System.out.print("Precio del producto: ");
+                    double precio = scanner.nextDouble();
+                    scanner.nextLine();
+                    Producto producto = new Producto(nombre, precio);
+                    productos.add(producto);
+                    System.out.println("Producto añadido correctamente");
                 }
                 case 2 -> {
                     System.out.print("Índice del producto a borrar: ");
@@ -63,36 +66,21 @@ public class Main {
                 }
                 case 4 -> {
                     System.out.println("=== Listado de productos ===");
+<<<<<<< HEAD
                     for (int index = 0; index < productos.size(); index++) {
-                        Producto productoAMostrar = productos.get(index);
+=======
+                    for (int i = 0; i < productos.size()-1; i++) {
+>>>>>>> rama1
+                        Producto productoAMostrar = productos.get(i);
                         System.out.println(index + ". " + productoAMostrar.getNombre() + " - $" + productoAMostrar.getPrecio());
                     }
 
                     System.out.println("============================");
                 }
                 case 5 -> System.out.println("¡Hasta luego!");
-                /**
-                 * <h2>Implementación Método añadirProducto</h2>
-                 * <p>Se ha insertado un método reemplazando el código</p>
-                 */
-                default -> Salir();
+                default -> System.out.println("Opción no válida");
             }
         } while (opcion != 5);
-    }
-
-    private static void Salir() {
-        System.out.println("Opción no válida");
-    }
-
-    private static void añadirProducto() {
-        System.out.print("Nombre del producto: ");
-        String nombre = scanner.nextLine();
-        System.out.print("Precio del producto: ");
-        double precio = scanner.nextDouble();
-        scanner.nextLine();
-        Producto producto = new Producto(nombre, precio);
-        productos.add(producto);
-        System.out.println("Producto añadido correctamente");
     }
 
     static class Producto {
