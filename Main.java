@@ -5,7 +5,7 @@ public class Main {
 
     static Scanner scanner = new Scanner(System.in);
     static ArrayList<Producto> productos = new ArrayList<>();
-   //HOLA SOY JUANA
+
     public static void main(String[] args) {
         int opcion;
         int indice;
@@ -65,18 +65,22 @@ public class Main {
                     }
                 }
                 case 4 -> {
-                    System.out.println("=== Listado de productos ===");
-                    for (int index = 0; index < productos.size(); index++) {
-                        Producto productoAMostrar = productos.get(i);
-                        System.out.println(index + ". " + productoAMostrar.getNombre() + " - $" + productoAMostrar.getPrecio());
-                    }
-
-                    System.out.println("============================");
+                    metodocaso4();
                 }
                 case 5 -> System.out.println("¡Hasta luego!");
                 default -> System.out.println("Opción no válida");
             }
         } while (opcion != 5);
+    }
+
+    private static void metodocaso4() {
+        System.out.println("=== Listado de productos ===");
+        for (int index = 0; index < productos.size(); index++) {
+            Producto productoAMostrar = productos.get(i);
+            System.out.println(index + ". " + productoAMostrar.getNombre() + " - $" + productoAMostrar.getPrecio());
+        }
+
+        System.out.println("============================");
     }
 
     static class Producto {
