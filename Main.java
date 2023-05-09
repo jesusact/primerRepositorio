@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/*
+ * @author Jesús, Luis, Alfonso, Juana
+ * @version 1.0
+ * */
 public class Main {
 
     static Scanner scanner = new Scanner(System.in);
@@ -51,6 +55,14 @@ public class Main {
         } while (opcion != 5);
     }
 
+
+
+    private static void metodocaso4() {
+        System.out.println("=== Listado de productos ===");
+        for (int index = 0; index < productos.size(); index++) {
+            Producto productoAMostrar = productos.get(i);
+            System.out.println(index + ". " + productoAMostrar.getNombre() + " - $" + productoAMostrar.getPrecio());
+
     /**
      * <h2>Caso 3 Modificar Productos</h2>
      * <p>Indicamos el indice del producto que queremos modificar</p>
@@ -94,6 +106,7 @@ public class Main {
         } else {
             productos.remove(indice);
             System.out.println("Producto borrado correctamente");
+>>>>>>> origin/development
         }
     }
 
