@@ -29,33 +29,13 @@ public class Main {
                      * <h2>Implementación Método añadirProducto</h2>
                      * <p>Se ha insertado un método reemplazando el código</p>
                      */
-                    añadirProducto();
+                    anadirProducto();
                 }
                 case 2 -> {
                     borrarProductos();
                 }
                 case 3 -> {
-                    System.out.print("Índice del producto a modificar: ");
-                    indice = scanner.nextInt();
-                    scanner.nextLine();
-                    if (indice < 0 || indice >= productos.size()) {
-                        System.out.println("Índice no válido");
-                    } else {
-                        System.out.print("Nuevo nombre del producto (deja vacío para no modificar): ");
-                        String nuevoNombre = scanner.nextLine();
-                        System.out.print("Nuevo precio del producto (deja 0 para no modificar): ");
-                        double nuevoPrecio = scanner.nextDouble();
-                        scanner.nextLine();
-                        Producto productoAModificar = productos.get(indice);
-                        if (!nuevoNombre.isEmpty()) {
-                            productoAModificar.setNombre(nuevoNombre);
-                        }
-                        if (nuevoPrecio != 0) {
-                            productoAModificar.setPrecio(nuevoPrecio);
-                        }
-
-                        System.out.println("Producto modificado correctamente");
-                    }
+                    modificarProductos();
                 }
                 case 4 -> {
                     System.out.println("=== Listado de productos ===");
@@ -80,7 +60,7 @@ public class Main {
         System.out.println("Opción no válida");
     }
 
-    private static void añadirProducto() {
+    private static void anadirProducto() {
         System.out.print("Nombre del producto: ");
         String nombre = scanner.nextLine();
         System.out.print("Precio del producto: ");
