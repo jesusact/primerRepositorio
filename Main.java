@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/*
+ * @author Jesús, Luis, Alfonso, Juana
+ * @version 1.0
+ * */
 public class Main {
 
     static Scanner scanner = new Scanner(System.in);
@@ -28,15 +32,7 @@ public class Main {
                     añadirProducto();
                 }
                 case 2 -> {
-                    System.out.print("Índice del producto a borrar: ");
-                    indice = scanner.nextInt();
-                    scanner.nextLine();
-                    if (indice < 0 || indice >= productos.size()) {
-                        System.out.println("Índice no válido");
-                    } else {
-                        productos.remove(indice);
-                        System.out.println("Producto borrado correctamente");
-                    }
+                    borrarProductos();
                 }
                 case 3 -> {
                     System.out.print("Índice del producto a modificar: ");
@@ -75,12 +71,12 @@ public class Main {
                  * <h2>Implementación Método añadirProducto</h2>
                  * <p>Se ha insertado un método reemplazando el código</p>
                  */
-                default -> Salir();
+                default -> salir();
             }
         } while (opcion != 5);
     }
 
-    private static void Salir() {
+    private static void salir() {
         System.out.println("Opción no válida");
     }
 
@@ -93,6 +89,7 @@ public class Main {
         Producto producto = new Producto(nombre, precio);
         productos.add(producto);
         System.out.println("Producto añadido correctamente");
+        }
     }
 
     static class Producto {
