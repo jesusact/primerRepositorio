@@ -25,11 +25,14 @@ public class Main {
             scanner.nextLine();
             switch (opcion) {
                 case 1 -> {
-                    /**
-                     * <h2>Implementación Método añadirProducto</h2>
-                     * <p>Se ha insertado un método reemplazando el código</p>
-                     */
-                    anadirProducto();
+                    System.out.print("Nombre del producto: ");
+                    String nombre = scanner.nextLine();
+                    System.out.print("Precio del producto: ");
+                    double precio = scanner.nextDouble();
+                    scanner.nextLine();
+                    Producto producto = new Producto(nombre, precio);
+                    productos.add(producto);
+                    System.out.println("Producto añadido correctamente");
                 }
                 case 2 -> {
                     borrarProductos();
@@ -40,35 +43,72 @@ public class Main {
                 case 4 -> {
                     System.out.println("=== Listado de productos ===");
                     for (int index = 0; index < productos.size(); index++) {
-                        Producto productoAMostrar = productos.get(index);
+                        Producto productoAMostrar = productos.get(i);
                         System.out.println(index + ". " + productoAMostrar.getNombre() + " - $" + productoAMostrar.getPrecio());
                     }
 
                     System.out.println("============================");
                 }
                 case 5 -> System.out.println("¡Hasta luego!");
-                /**
-                 * <h2>Implementación Método añadirProducto</h2>
-                 * <p>Se ha insertado un método reemplazando el código</p>
-                 */
-                default -> salir();
+                default -> System.out.println("Opción no válida");
             }
         } while (opcion != 5);
     }
 
-    private static void salir() {
-        System.out.println("Opción no válida");
+
+
+    private static void metodocaso4() {
+        System.out.println("=== Listado de productos ===");
+        for (int index = 0; index < productos.size(); index++) {
+            Producto productoAMostrar = productos.get(i);
+            System.out.println(index + ". " + productoAMostrar.getNombre() + " - $" + productoAMostrar.getPrecio());
+
+
+
+    /**
+     *<h2>Caso 2 Borrar Productos</h2>
+     *<p>Indicamos el <b>índice</b> y el programa nos devuelve si es válido o si se ha borrado dicho producto</p>
+     */
+    private static void borrarProductos() {
+        int indice;
+        System.out.print("Índice del producto a borrar: ");
+        indice = scanner.nextInt();
+        scanner.nextLine();
+        if (indice < 0 || indice >= productos.size()) {
+            System.out.println("Índice no válido");
+        } else {
+            productos.remove(indice);
+            System.out.println("Producto borrado correctamente");
+>>>>>>> origin/development
+        }
     }
 
-    private static void anadirProducto() {
-        System.out.print("Nombre del producto: ");
-        String nombre = scanner.nextLine();
-        System.out.print("Precio del producto: ");
-        double precio = scanner.nextDouble();
+    /**
+    * <h2>Caso 3 Modificar Productos</h2>
+    * <p>Indicamos el indice del producto que queremos modificar</p>
+    */
+    private static void modificarProductos() {
+        int indice;
+        System.out.print("Índice del producto a modificar: ");
+        indice = scanner.nextInt();
         scanner.nextLine();
-        Producto producto = new Producto(nombre, precio);
-        productos.add(producto);
-        System.out.println("Producto añadido correctamente");
+        if (indice < 0 || indice >= productos.size()) {
+            System.out.println("Índice no válido");
+        } else {
+            System.out.print("Nuevo nombre del producto (deja vacío para no modificar): ");
+            String nuevoNombre = scanner.nextLine();
+            System.out.print("Nuevo precio del producto (deja 0 para no modificar): ");
+            double nuevoPrecio = scanner.nextDouble();
+            scanner.nextLine();
+            Producto productoAModificar = productos.get(indice);
+            if (!nuevoNombre.isEmpty()) {
+                productoAModificar.setNombre(nuevoNombre);
+            }
+            if (nuevoPrecio != 0) {
+                productoAModificar.setPrecio(nuevoPrecio);
+            }
+
+            System.out.println("Producto modificado correctamente");
         }
     }
 
