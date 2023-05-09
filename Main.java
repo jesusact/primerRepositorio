@@ -31,15 +31,7 @@ public class Main {
                     System.out.println("Producto añadido correctamente");
                 }
                 case 2 -> {
-                    System.out.print("Índice del producto a borrar: ");
-                    indice = scanner.nextInt();
-                    scanner.nextLine();
-                    if (indice < 0 || indice >= productos.size()) {
-                        System.out.println("Índice no válido");
-                    } else {
-                        productos.remove(indice);
-                        System.out.println("Producto borrado correctamente");
-                    }
+                    borrarProductos();
                 }
                 case 3 -> {
                     System.out.print("Índice del producto a modificar: ");
@@ -77,6 +69,22 @@ public class Main {
                 default -> System.out.println("Opción no válida");
             }
         } while (opcion != 5);
+    }
+
+    /**
+     *
+     */
+    private static void borrarProductos() {
+        int indice;
+        System.out.print("Índice del producto a borrar: ");
+        indice = scanner.nextInt();
+        scanner.nextLine();
+        if (indice < 0 || indice >= productos.size()) {
+            System.out.println("Índice no válido");
+        } else {
+            productos.remove(indice);
+            System.out.println("Producto borrado correctamente");
+        }
     }
 
     static class Producto {
