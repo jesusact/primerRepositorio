@@ -25,14 +25,7 @@ public class Main {
             scanner.nextLine();
             switch (opcion) {
                 case 1 -> {
-                    System.out.print("Nombre del producto: ");
-                    String nombre = scanner.nextLine();
-                    System.out.print("Precio del producto: ");
-                    double precio = scanner.nextDouble();
-                    scanner.nextLine();
-                    Producto producto = new Producto(nombre, precio);
-                    productos.add(producto);
-                    System.out.println("Producto añadido correctamente");
+                    añadirProducto();
                 }
                 case 2 -> {
                     borrarProductos();
@@ -55,6 +48,19 @@ public class Main {
         } while (opcion != 5);
     }
 
+    /**
+     * Este método añade un producto nuevo
+     */
+    private static void añadirProducto() {
+        System.out.print("Nombre del producto: ");
+        String nombre = scanner.nextLine();
+        System.out.print("Precio del producto: ");
+        double precio = scanner.nextDouble();
+        scanner.nextLine();
+        Producto producto = new Producto(nombre, precio);
+        productos.add(producto);
+        System.out.println("Producto añadido correctamente");
+    }
 
 
     private static void metodocaso4() {
