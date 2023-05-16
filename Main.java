@@ -34,19 +34,15 @@ public class Main {
                     modificarProductos();
                 }
                 case 4 -> {
-                    System.out.println("=== Listado de productos ===");
-                    for (int index = 0; index < productos.size(); index++) {
-                        Producto productoAMostrar = productos.get(i);
-                        System.out.println(index + ". " + productoAMostrar.getNombre() + " - $" + productoAMostrar.getPrecio());
-                    }
-
-                    System.out.println("============================");
+                    listarProductos();
                 }
                 case 5 -> System.out.println("¡Hasta luego!");
                 default -> System.out.println("Opción no válida");
             }
         } while (opcion != 5);
     }
+
+
 
     /**
      * Este método añade un producto nuevo
@@ -61,14 +57,6 @@ public class Main {
         productos.add(producto);
         System.out.println("Producto añadido correctamente");
     }
-
-
-    private static void metodocaso4() {
-        System.out.println("=== Listado de productos ===");
-        for (int index = 0; index < productos.size(); index++) {
-            Producto productoAMostrar = productos.get(i);
-            System.out.println(index + ". " + productoAMostrar.getNombre() + " - $" + productoAMostrar.getPrecio());
-
 
 
     /**
@@ -116,6 +104,19 @@ public class Main {
 
             System.out.println("Producto modificado correctamente");
         }
+    }
+
+    /**
+     *<h2>Caso 4 Listar Productos</h2>
+     */
+    private static void listarProductos() {
+        System.out.println("=== Listado de productos ===");
+        for (int index = 0; index < productos.size(); index++) {
+            Producto productoAMostrar = productos.get(i);
+            System.out.println(index + ". " + productoAMostrar.getNombre() + " - $" + productoAMostrar.getPrecio());
+        }
+
+        System.out.println("============================");
     }
 
     static class Producto {
